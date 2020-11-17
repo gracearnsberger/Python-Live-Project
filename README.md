@@ -16,6 +16,7 @@
  -The user can browse cities on the popular cities page and then choose to save a city which will bring them to the save cities page where they will fill out a form full of information. The saved form data will then be displayed under the Wish List page which will show the saved cities with a details button. When the details button is clicked it will take the user to the city details page with the remaining information from the form such as rating, why, and the date it was saved.
  
  ![Beach App Home](https://lh3.googleusercontent.com/-iViq-Z0cWjc/X7PxsE1LuqI/AAAAAAAAIWU/g5PVIfd8aeEetw7foL7HPAGgSJxJtzLpQCK8BGAsYHg/s512/2020-11-17.png)  
+ ![Beach App Popular Cities](https://lh3.googleusercontent.com/-w8CBHwGwhyc/X7P3BpcSlTI/AAAAAAAAIWo/cR7Z8LsPSx03pjhV4fJVQjd4HuVY6kroQCK8BGAsYHg/s512/2020-11-17.png)  
 
 -In my models.py file I set up a form where on the "Save Cities" page, the user can select which city they want to save, rate it 1-10, write why they chose that city, and the date that they saved it which will then be saved to the database and will be displayed under the "Saved Tropical Wishlist" page for the user to browse.
 
@@ -66,7 +67,7 @@
             return self.city_name
             
   
-   ![Beach App Popular Cities](https://lh3.googleusercontent.com/-Y5vF_0e4-vc/X7PwiJqiQ5I/AAAAAAAAIWE/VWDMQy1FxLgJ2O8CaG8C-549-h-9-n9SgCK8BGAsYHg/s512/2020-11-17.png)
+   ![Beach App Save Cities](https://lh3.googleusercontent.com/-Y5vF_0e4-vc/X7PwiJqiQ5I/AAAAAAAAIWE/VWDMQy1FxLgJ2O8CaG8C-549-h-9-n9SgCK8BGAsYHg/s512/2020-11-17.png)
    
    -In forms.py file, the form on the "Save Cities" page is registered 
    
@@ -143,7 +144,8 @@
             return render(request, 'BeachApp/BeachApp_hotels.html')
 
 
-   -I used Django Template Langage to override specific parts of my templates & displayed the Saved Cities for the specific user on the Tropical Wish List Page.
+   -I used Django Template Langage to override specific parts of my templates 
+   -The users saved cities will be displayed on the Tropical Wish List Page with the city name and a "details" button which will take the user to the details page with the    remaining information.
         
          {% block header %}
         Saved Tropical Cities Details!
@@ -162,3 +164,6 @@
             </div>
         </div>
         {% endblock %}
+        
+![Beach App Wish List](https://lh3.googleusercontent.com/-vx0RrkFJ21g/X7P2xmzmtAI/AAAAAAAAIWg/MYvTGE6Wf8U2GnVuwdbEN0uKeC7NS0bXwCK8BGAsYHg/s512/2020-11-17.png)   
+![Beach App Details]()
