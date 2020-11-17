@@ -1,5 +1,5 @@
 ## Python-Live-Project
--In a two week long sprint, I was able to work with other developers in order to build a collection of various apps that store different things in a project called "AppBuilder9000". This project was created using Python, html, js & css programming languages and using PyCharm Studio. My job was to create an app that uses both front end and back end development and will allow the user to browse, save, and view their favorite tropical cities that they find on my app. This project used Django Framework and was completed using Agile and Scrum methods in order to keep project management on course. 
+-In a two week long sprint, I was able to work with other developers in order to build a collection of various apps that store different things in a project called "AppBuilder9000". This project was created using Python, html, js & css programming languages and using PyCharm Studio. My job was to create an app that uses both front end and back end development and will allow the user to browse, save, and view their favorite tropical cities that they find on my app. I used back end engineering to save the form on my "Saved Cities" page to the database which can be accessed and modified in SQL Server Management Studio and I used front end engineering to make the site user friendly, organized, and all linked together. This project used Django Framework & Template Language and was completed using Agile and Scrum methods in order to keep project management on course. 
 
  -I used the urls.py file to register each page and the url path associated 
    
@@ -11,8 +11,8 @@
             path('wish_list_index', views.tropical_cities_wish_list_index, name='TropicalCitiesWishList'),
             path('book_hotels', views.tropical_cities_book_hotels, name='TropicalCitiesBookHotels'),
             path('city-details/<int:pk>/', views.tropical_cities_details, name='save_cities'),
-
         ]
+        
 
 -In my models.py file I set up a form where on the "Save Cities" page, the user can select which city they want to save, rate it 1-10, write why they chose that city, and the date that they saved it which will then be saved to the database and will be displayed under the "Saved Tropical Wishlist" page for the user to browse.
 
@@ -95,8 +95,7 @@
             </div>
         {% endblock %}
                 
-   -In views.py I put in functions that take a web request and return a web response. 
-   -I also used back end engineering to save the form from "Save Cities" page to the database which can be accessed and modified in SQL Server Management Studio.
+   -In views.py I put in functions that take a web request and return a web response for each page
    
          #home page
         def tropical_cities_home(request):
