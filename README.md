@@ -12,7 +12,10 @@
             path('book_hotels', views.tropical_cities_book_hotels, name='TropicalCitiesBookHotels'),
             path('city-details/<int:pk>/', views.tropical_cities_details, name='save_cities'),
         ]
-        
+       
+ -The user can browse cities on the popular cities page and then choose to save a city which will bring them to the save cities page where they will fill out a form full of information. The saved form data will then be displayed under the Wish List page which will show the saved cities with a details button. When the details button is clicked it will take the user to the city details page with the remaining information from the form such as rating, why, and the date it was saved.
+ 
+ ![Beach App Home](https://lh3.googleusercontent.com/-iViq-Z0cWjc/X7PxsE1LuqI/AAAAAAAAIWU/g5PVIfd8aeEetw7foL7HPAGgSJxJtzLpQCK8BGAsYHg/s512/2020-11-17.png)  
 
 -In my models.py file I set up a form where on the "Save Cities" page, the user can select which city they want to save, rate it 1-10, write why they chose that city, and the date that they saved it which will then be saved to the database and will be displayed under the "Saved Tropical Wishlist" page for the user to browse.
 
@@ -62,6 +65,9 @@
         def __str__(self):
             return self.city_name
             
+  
+   ![Beach App Popular Cities](https://lh3.googleusercontent.com/-Y5vF_0e4-vc/X7PwiJqiQ5I/AAAAAAAAIWE/VWDMQy1FxLgJ2O8CaG8C-549-h-9-n9SgCK8BGAsYHg/s512/2020-11-17.png)
+   
    -In forms.py file, the form on the "Save Cities" page is registered 
    
          #form for save cities page
