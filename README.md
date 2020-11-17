@@ -1,7 +1,20 @@
 ## Python-Live-Project
--In a two week long sprint, I was able to work with other developers in order to build a collection of various apps that store different things in a project called "AppBuilder9000". This project was created using Python, html, & css programming languages and using PyCharm Studio. My job was to create an app that uses both front end and back end development and will allow the user to browse, save, and view their favorite tropical cities that they find on my app. This project used Django Framework and was completed using Agile and Scrum methods in order to keep project management on course. 
+-In a two week long sprint, I was able to work with other developers in order to build a collection of various apps that store different things in a project called "AppBuilder9000". This project was created using Python, html, js & css programming languages and using PyCharm Studio. My job was to create an app that uses both front end and back end development and will allow the user to browse, save, and view their favorite tropical cities that they find on my app. This project used Django Framework and was completed using Agile and Scrum methods in order to keep project management on course. 
 
--In my models.py file I set up a form where on the "Save Cities" page, the user can select which city they want to save, rate it 1-10, write why they chose that city, and the date that they saved it.
+ -I used the urls.py file to register each page and the url path associated 
+   
+        #url paths for each page
+        urlpatterns = [
+            path('home', views.tropical_cities_home, name='TropicalCitiesHome'),
+            path('popular_cities', views.tropical_cities_popular, name='TropicalCitiesPopular'),
+            path('save_tropical_cities', views.save_tropical_cities, name='SaveTropicalCities'),
+            path('wish_list_index', views.tropical_cities_wish_list_index, name='TropicalCitiesWishList'),
+            path('book_hotels', views.tropical_cities_book_hotels, name='TropicalCitiesBookHotels'),
+            path('city-details/<int:pk>/', views.tropical_cities_details, name='save_cities'),
+
+        ]
+
+-In my models.py file I set up a form where on the "Save Cities" page, the user can select which city they want to save, rate it 1-10, write why they chose that city, and the date that they saved it which will then be saved to the database and will be displayed under the "Saved Tropical Wishlist" page for the user to browse.
 
     from django.db import models
 
@@ -62,23 +75,28 @@
                 widgets = {
                     'date_saved': DateInput()
                 }
-                
-   -I used the urls.py file to register each page and the url path associated 
+            
+   -Using the html page for "Save Cities" I used the form method "POST" to save the information that the user inputs
    
-        #url paths for each page
+         {% block header %}
+        Save Cities to Your Tropical City Wish List! &#127965
+        {% endblock %}
 
-        urlpatterns = [
-            path('home', views.tropical_cities_home, name='TropicalCitiesHome'),
-            path('popular_cities', views.tropical_cities_popular, name='TropicalCitiesPopular'),
-            path('save_tropical_cities', views.save_tropical_cities, name='SaveTropicalCities'),
-            path('wish_list_index', views.tropical_cities_wish_list_index, name='TropicalCitiesWishList'),
-            path('book_hotels', views.tropical_cities_book_hotels, name='TropicalCitiesBookHotels'),
-            path('city-details/<int:pk>/', views.tropical_cities_details, name='save_cities'),
-
-        ]
-        
-        
-   -In views.py I put in functions that take a web request and return a web response. I also used back end engineering to save the form from "Save Cities" page to the database which can be accessed and modified in SQL Server Management Studio.
+        <!--model form-->
+        {% block content %}
+            <div class="form">
+                        <form method="POST" action="save_tropical_cities">
+                            <div>
+                                {% csrf_token %}
+                                {{ form.as_ul }}
+                                <input type= "submit" value="Save">
+                            </div>
+                        </form>
+            </div>
+        {% endblock %}
+                
+   -In views.py I put in functions that take a web request and return a web response. 
+   -I also used back end engineering to save the form from "Save Cities" page to the database which can be accessed and modified in SQL Server Management Studio.
    
          #home page
         def tropical_cities_home(request):
@@ -119,8 +137,8 @@
         def tropical_cities_book_hotels(request):
             return render(request, 'BeachApp/BeachApp_hotels.html')
 
+
    -I used Django Template Langage to override specific parts of my templates & displayed the Saved Cities for the specific user on the Tropical Wish List Page.
-   
         
          {% block header %}
         Saved Tropical Cities Details!
