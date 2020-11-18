@@ -1,4 +1,4 @@
-## Python-Live-Project Summary
+## Python Live Project Summary
 -In a two week long sprint, I was able to work with other developers in order to build a collection of various apps that store different things in a project called "AppBuilder9000". This project was created using Python, HTML, JS & CSS programming languages and using PyCharm Studio. My job was to create an app that uses both front end and back end engineering and will allow the user to browse, save, and view their favorite tropical cities that they find on my app. I used back end engineering to save the form on my "Saved Cities" page to the database which can be accessed and modified in SQL Server Management Studio and I used front end engineering to make the site user friendly, organized, and all linked together. This project used Django Framework & Template Language and was completed using Agile and Scrum methods in order to keep project management on course. 
 
 -For my full project code files visit: https://github.com/gracearnsberger/Python-Live-Project-Code
