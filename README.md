@@ -13,7 +13,7 @@
             path('city-details/<int:pk>/', views.tropical_cities_details, name='save_cities'),
         ]
        
- -The user can browse cities on the popular cities page and then choose to save a city which will bring them to the save cities page where they will fill out a form full of information. The saved form data will then be displayed under the Wish List page which will show the saved cities with a details button. When the details button is clicked it will take the user to the city details page with the remaining information from the form such as rating, why, and the date it was saved.
+ -I chose to create a "Beach App" from scratch using HTML, CSS, & JS. The user can browse cities on the popular cities page and then choose to save a city which will bring them to the save cities page where they will fill out a form full of information. The saved form data will then be displayed under the Wish List page which will show the saved cities with a details button. When the details button is clicked it will take the user to the city details page with the remaining information from the form such as rating, why, and the date it was saved.
  
  ![Beach App Home](https://lh3.googleusercontent.com/-iViq-Z0cWjc/X7PxsE1LuqI/AAAAAAAAIWU/g5PVIfd8aeEetw7foL7HPAGgSJxJtzLpQCK8BGAsYHg/s512/2020-11-17.png)  
  ![Beach App Popular Cities](https://lh3.googleusercontent.com/-w8CBHwGwhyc/X7P3BpcSlTI/AAAAAAAAIWo/cR7Z8LsPSx03pjhV4fJVQjd4HuVY6kroQCK8BGAsYHg/s512/2020-11-17.png)  
